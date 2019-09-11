@@ -1,3 +1,5 @@
 <h1>Welcome to the gallery</h1>
 
-<img src="{{ gallery_image }}" alt="random placeholder image">
+{% for url in gallery_images %}
+<img src="{{ url }}" alt="random placeholder image">
+{% endfor %}
