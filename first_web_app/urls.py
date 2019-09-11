@@ -18,7 +18,7 @@ from django.http import HttpResponse
 from django.urls import path
 
 def home_page(request):
-    return HttpResponse('Hi, this is the home page')
+    return HttpResponse('<h1>Hi</h1> <p>This is the home page</p>')
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
