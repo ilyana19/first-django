@@ -15,10 +15,12 @@ Including another URLconf
 """
 # from django.contrib import admin
 from django.http import HttpResponse
+from django.shortcuts import render
 from django.urls import path
 
 def home_page(request):
-    return HttpResponse('<h1>Hi</h1> <p>This is the home page</p>')
+    response = render(request, 'index.html')
+    return HttpResponse(response)
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
