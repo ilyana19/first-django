@@ -14,16 +14,21 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 # from django.contrib import admin
+from random import randint
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.urls import path
 
 def home_page(request):
-    response = render(request, 'index.html')
+    context = {'name': 'Linda'}
+    response = render(request, 'index.html', context)
     return HttpResponse(response)
 
 def portfolio(request):
-    response = render(request, 'gallery.html')
+    random_num = randint(0, 100)
+    image_url = "https://picsum.photos/400/600/?image={}".format(random_num)
+    context = {'gallery_image': image_url}
+    response = render(request, 'gallery.html', context)
     return HttpResponse(response)
 
 urlpatterns = [
