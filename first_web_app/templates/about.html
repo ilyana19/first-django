@@ -1,0 +1,19 @@
+<h1>About Me</h1>
+
+{% for url in gallery_images %}
+<img src="{{ url }}" alt="random placeholder image">
+{% endfor %}
+
+<h2>Skills</h2>
+<ul>
+  {% for item in skills %}
+  <li>{{ item }}</li>
+  {% endfor %}
+</ul>
+
+<h2>Interests</h2>
+<ul>
+  {% for item in interests %}
+  <li>{{ item }}</li>
+  {% endfor %}
+</ul>
